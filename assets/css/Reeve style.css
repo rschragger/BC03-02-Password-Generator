@@ -1,0 +1,411 @@
+/* Declare variables */
+
+:root {
+    --dark: hsl(20, 7%, 65%);
+    --darker: hsl(20, 7%, 35%);
+    --light: hsl(20, 7%, 85%);
+    --bggrey: #eee;
+    --highlight: #fff;
+
+    /*Below is original brighter colours for testing 
+    --dark: rgb(116, 0, 170);
+    --darker: rgb(56, 1, 82);
+    --light: rgb(184, 189, 247);
+    --bggrey: #ddd;
+    --highlight: rgb(255, 255, 255); */
+
+    --gradientDark: linear-gradient(var(--dark) 50%, var(--darker) 100%);
+    /* --gradientLight: linear-gradient(var(--light) 50%, rgba(255, 255, 255, 0) 100%) ; */
+    --gradientLight: linear-gradient(rgba(255, 255, 255, 0), var(--highlight));
+}
+
+/* Universal Settings */
+* {
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Standard Sections */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    /* background-color: var(--dark); */
+    background-image: var(--gradientDark);
+}
+
+body {
+    line-height: 1.5;
+}
+
+section {
+    background-color: var(--bggrey);
+    display: flex;
+    flex-direction: row;
+
+}
+
+footer {
+    background-color: var(--dark);
+    background-image: var(--gradientDark);
+
+    border-top: 3px solid var(--light);
+    padding: 3px;
+
+    color: var(--light);
+    font-size: small;
+    text-align: right;
+}
+
+/* Standard Tags */
+h1 {
+    font: 800;
+    font-size: 200%;
+    padding: 5px 5px 5px 20px;
+    margin: 5px 0;
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+/* Body copy settings */
+p {
+    color: var(--darker);
+    padding: 0 10px;
+    font: 400;
+}
+
+a {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Tags in Standard Sections */
+
+/* Top Navigation */
+nav ul {
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+
+}
+
+nav a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 130%;
+    color: var(--light);
+    background-color: none;
+    /* var(--dark);*/
+    padding: 5px;
+    border-bottom: 4px solid var(--light);
+    margin: 5px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--highlight);
+    border-color: var(--highlight);
+    border-image;
+    var(--gradientLight);
+    /* background-image:  var(--gradientDark); */
+}
+
+/* Sections Part, same design for all containing boxes */
+section div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 5px 0;
+}
+
+/* Side header  */
+section h2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    width: 180px;
+    min-width: 180px;
+    margin: 10px 0 0 0;
+    padding: 10px;
+
+    border-right: 5px solid var(--dark);
+
+    color: var(--dark);
+    text-align: right;
+    font-size: 130%;
+}
+
+a img:hover {
+filter:brightness(125%) ;
+border-color: var(--darker);
+}
+
+/* Element Tags */
+
+/* Hero Image section */
+#hero-image {
+    background-image: url("../images/SandbarPointWalter.JPG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 150px;
+    min-width: max-content;
+    position: relative;
+    box-shadow: 0px 5px 12px -5px var(--darker);
+
+}
+
+/* Header design for hero image  */
+#hero-image h2 {
+    background-color: var(--light);
+    color: var(--dark);
+    font-size: 150%;
+    padding: 3px 30px 3px 10px;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* Standard images for work section */
+#work ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#work li {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 48%;
+    position: relative;
+    padding: 0px;
+    margin: 5px;
+}
+
+/* This is the first "hero" image */
+#work-hero li {
+    display: flex;
+    flex-wrap: wrap;
+    width: 97%;
+    position: relative;
+}
+
+#work img {
+    width: 100%;
+    border: 5px solid var(--light);
+
+    position: relative;
+    padding: 0px;
+}
+
+#work img:hover {
+
+    background-color: var(--highlight);
+    /* opacity: .7; */
+    filter: brightness(120%);
+    /* -webkit-filter: blur(5px); */
+}
+
+/* Images within articles */
+.articleImg {
+    width: 40%;
+    max-width: 400px;
+    float: left;
+
+    border: 3px solid var(--dark);
+    margin: 3px 10px 5px 3px;
+}
+
+.articleImg:nth-child(odd) {
+    float: right;
+}
+
+/* Heading for work images  */
+.workDesc {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    display: block;
+
+    background-color: var(--light);
+    color: var(--dark);
+    text-align: left;
+    text-decoration: none;
+}
+
+
+
+#workLi:hover * {
+    background-color: var(--dark);
+    color: var(--highlight);
+    border: 3px solid var(--dark);
+
+}
+
+/* .workDesc:hover  img:hover {
+    background-color: var(--dark);
+    color: var(--highlight);
+} */
+
+.workDesc h4 {
+    padding: 0 10px;
+    font-size: 125%;
+}
+
+
+#contact-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+}
+
+#contact-list ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+
+}
+
+#contact-list a {
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    flex-flow: wrap;
+    justify-content: space-around;
+    padding: 5px;
+
+    font-size: 120%;
+    color: var(--dark);
+    text-decoration: none;
+    border-bottom: 5px solid var(--dark);
+
+}
+
+#contact-list a:hover {
+    color: var(--highlight);
+    background-image: var(--gradientDark);
+    border-color: var(--darker);
+
+    text-decoration: underline;
+}
+
+
+/* Media Responsiveness */
+
+/* Tablet media <825 pixel */
+@media (max-width: 825px) {
+
+    header,
+    header h1,
+    nav {
+        display: flex;
+        flex-direction: column;
+        flex-flow: wrap;
+
+        /* justify-content: right; */
+        box-sizing: border-box;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    nav,
+    nav ul,
+    nav li,
+    nav a {
+
+        flex-flow: wrap;
+        min-width: 100px;
+    }
+
+    #hero-image h2 {
+        min-width: 50px;
+        left: 0;
+        text-align: left;
+    }
+
+    section {
+        flex-direction: column;
+    }
+
+    section h2 {
+        flex-direction: column;
+        width: 95%;
+        margin: 10px 10px;
+        padding: 10px 0;
+
+        border-right: none;
+        border-bottom: 5px solid var(--dark);
+
+        color: var(--dark);
+        font-size: 150%;
+        text-align: left;
+    }
+
+    #work li {
+        width: 100%;
+    }
+
+    #contact-me ul {
+        /* flex-direction: column; */
+        /* border: none; */
+    }
+
+    #contact-me a {
+
+        flex-flow: wrap;
+        min-width: 300px;
+        margin-bottom: 10px;
+
+    }
+
+
+}
+
+/* Phone media <460 pixel */
+@media (max-width: 460px) {
+
+    header,
+    header h1,
+    nav,
+    nav ul,
+    nav li,
+    nav a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .workDesc {
+        position: relative;
+        width: 100%;
+        margin: 0;
+    }
+
+    .articleImg {
+        width: 97%;
+        float: none;
+    }
+
+    #work li {
+        margin: 0;
+    }
+
+
+
+}
