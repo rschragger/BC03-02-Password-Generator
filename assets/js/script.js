@@ -1,15 +1,14 @@
 //Create variables
-const UCaseList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
-const LCaseList = "abcdefghijklmnopqrstuvwxyz" ;
-const NumbsList = "0123456789" ;
-const SymbsList = "~!@#$%^&*()[]{}-+=|\<>?/" ;
 
-var CharcTypes = {
-  UCaseLett : true ,
-  LCaseLett : true ,
-  Numbs : true ,
-  Symbs : true ,
-};
+// Types of character to use
+// Note: variable names deliberately "obscured" to prevent using reserved words. Also, I want to control which symbols are used to deter ones which might cause issues
+const uCaseLett = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
+const lCaseLett = "abcdefghijklmnopqrstuvwxyz" ;
+const numbs = "0123456789" ;
+const symbs = "~!@#$%^&*()[]{}-+=|\<>?/" ;
+
+var charcTypes = {}; //this will be an array of the above constants names
+
 
 
 // Assignment Code
@@ -18,10 +17,10 @@ var generateBtn = document.querySelector("#generate");
 //Get Character Types to use
 
 //Generate a random character
-function generateRandChar (CharcTypeChoice){
-  var numInList = CharcTypeChoice.length ;
+function generateRandChar (charcTypeChoice){
+  var numInList = charcTypeChoice.length ;
   randNo = Math.floor ( Math.random() * numInList ) ;
-  NewChar = CharcTypeChoice.substring(randNo,randNo+1);
+  NewChar = charcTypeChoice.substring(randNo,randNo+1);
   console.log (randNo) ;
   console.log (NewChar) ;
   return NewChar ;
