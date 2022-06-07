@@ -1,7 +1,19 @@
+/* Declare variables */
+
+:root {
+  --dark: hsl(20, 7%, 65%);
+  --darker: hsl(20, 7%, 35%);
+  --light: hsl(20, 7%, 85%);
+  --bggrey: #eee;
+  --highlight: #fff;
+}
+
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  /* background-color: var(--light); */
 }
 
 html,
@@ -10,10 +22,11 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  background-image: linear-gradient(var(--light) 70%, var(--darker) 100%);
 }
 
 body {
-  font-family: sans-serif;
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
   background-color: #f9fbfd;
 }
 
@@ -27,7 +40,8 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: var(--darkest);
+  /*hsl(206, 17%, 28%);*/
 }
 
 .card {
@@ -35,7 +49,8 @@ header {
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
+  color: var(--darkest);
+  /*hsl(206, 17%, 28%);*/
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
@@ -76,8 +91,7 @@ header {
   border: none;
   background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
   color: hsl(0, 0%, 100%);
   display: inline-block;
   font-size: 22px;
@@ -95,6 +109,49 @@ button[disabled] {
 
 .float-right {
   float: right;
+}
+
+.choices {
+  display: block;
+  /* justify-content: space-around; */
+}
+
+#qtyRange {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center ;
+  
+  }
+  #qtyRange form{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    text-align: center ;
+  }
+
+#charTypesDiv {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#charTypesDiv p {
+ display: flex;
+ flex-wrap: wrap;
+  width: 98%;
+  position: relative;
+  justify-content: center ;
+
+
+}
+
+.checkboxChoice {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
 }
 
 #password {
