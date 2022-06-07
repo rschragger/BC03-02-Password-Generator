@@ -116,26 +116,41 @@ button[disabled] {
   /* justify-content: space-around; */
 }
 
-.qtyRange {
-  display: block;
-  width: 100%;
-
-}
+#qtyRange {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center ;
+  
+  }
+  #qtyRange form{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    text-align: center ;
+  }
 
 #charTypesDiv {
   display: flex;
+  flex-direction: row;
+  position: relative;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
 #charTypesDiv p {
-  /* display: block; */
-  width: 100%;
+ display: flex;
+ flex-wrap: wrap;
+  width: 98%;
+  position: relative;
+  justify-content: center ;
+
 
 }
 
 .checkboxChoice {
-  display: flexbox;
+  display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 
 }
 
