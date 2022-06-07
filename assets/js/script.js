@@ -10,22 +10,36 @@ const symbs = "~!@#$%^&*()[]{}-+=|\<>?/";
 
 
 //Get choices of which characters to use ****
-function charcTypeList() {
-  ; //this will be an array of the above constants names
-  var charcTypes = [] ;
-  var charChoiceList = [ "useUCase", "useLCase", "useNumb", "useSymb"] ;
-  var constList = [ "uCaseLett", "lCaseLett" , "numbs" , "symbs"] ;
+// function charcTypeList() {
+//   ; //this will be an array of the above constants names
+//   var charcTypes = [] ;
+//   var charChoiceList = [ "useUCase", "useLCase", "useNumb", "useSymb"] ;
+//   var constList = [ "uCaseLett", "lCaseLett" , "numbs" , "symbs"] ;
 
-  for (choiceCount = 0; choiceCount < charChoiceList.length; choiceCount++ ) {
-    var caseChoice = document.getElementById(charChoiceList[choiceCount]);
-    //console.log(constList[choiceCount] + "///" + caseChoice.checked);
-    if (caseChoice.checked = true) {
-     charcTypes.push(constList[choiceCount]); //we want the string added
-     //console.log(charcTypes)
-    }
-  }
-  return charcTypes ;
-}  //****end function choices of which characters to use
+//   for (choiceCount = 0; choiceCount < charChoiceList.length; choiceCount++ ) {
+//     var charChoice = document.getElementById(charChoiceList[choiceCount]);
+//     //console.log(constList[choiceCount] + "///" + caseChoice.checked);
+//     if (charChoice.checked = true) {
+//      charcTypes.push(constList[choiceCount]); //we want the string added
+//      //console.log(charcTypes)
+//     }
+//   }
+//   return charcTypes ;
+// } 
+//****end function choices of which characters to use
+
+var charChoice = document.querySelector("#useUCase");
+console.log( charChoice.checked )
+// charChoice.addEventListener("click", function (event) {
+//   event.preventDefault();
+//   var element = event.target;
+//   console.log(element);
+//   if (element.checked == true) {
+//     console.log("Check true");
+//   } else {
+    
+//   }
+// })
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -47,7 +61,7 @@ function generateRandChar(charcTypeChoice) {
 //***This is the maths function */
 function generatePassword() {
   charcTypeList()
-console.log("charcTypes: " + charcTypeList())
+  console.log("charcTypes: " + charcTypeList())
   y = "Y";
   return y;
 }
