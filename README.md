@@ -20,7 +20,9 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-Access to website at https://rschragger.github.io/BC03-02-Password-Generator/ is all that is required
+Access to website at https://rschragger.github.io/BC03-02-Password-Generator/ and Javascript running is all that is required.
+
+Github page at https://github.com/rschragger/BC03-02-Password-Generator
 
 ## Usage
 
