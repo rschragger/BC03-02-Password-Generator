@@ -34,6 +34,8 @@ The password will appear in the central box
 
 [Google](google.com) and many Javascript references in [w3schools](https://www.w3schools.com) and [MDN(Mozilla Dev Network)](https://developer.mozilla.org/en-US/) were used frequently to research topics and syntax used.
 
+Password special characters have been obtained from (https://owasp.org/www-community/password-special-characters)
+
 ## License
 
 © Copyright Reeve Schragger 2022

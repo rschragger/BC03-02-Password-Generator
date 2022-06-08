@@ -39,18 +39,23 @@ body {
 
 header {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   padding-top: 0px;
+  margin: 0 auto;
   color: var(--darkest);
-  /*hsl(206, 17%, 28%);*/
+  text-shadow: 0px 4px 8px black;
+  background-image: linear-gradient(-90deg, black 0%, var(--darker) 40%, var(--darker) 60%, var(--light) 90%,black 100%);
+  background-size: 20px 40px;
+  max-width: 800px;
 }
 
 header h1 {
   color: var(--highlight);
-  text-shadow: 0px 4px 8px black;
+  /* text-shadow: 0px 4px 8px black;
   background-image: linear-gradient(90deg, black 22.50%, var(--darker) 22.50%, var(--darker) 45%, var(--highlight) 45%, var(--highlight) 50%, black 50%, black 72.50%, var(--darker) 72.50%, var(--darker) 95%, var(--highlight) 95%, var(--highlight) 100%);
-  background-size: 20px 40px;
+  background-size: 20px 40px; */
   padding: 10px 0;
+  
 }
 
 .card {
@@ -132,20 +137,27 @@ button[disabled] {
   appearance: none;
   border: none;
   display: block;
+  position: relative;
   width: 100%;
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
-  font-size: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
   border: 2px dashed #c0c7cf;
   border-radius: 20px;
-  resize: none;
-  overflow: hidden;
+  resize:none;
+  /* overflow:hidden ; */
   box-shadow: inset 5px 5px 12px 0px var(--dark);
+}
+
+#password:hover {
+  box-shadow: inset 8px 8px 12px 2px var(--dark);
+
 }
 
 @media (max-width: 690px) {

@@ -5,7 +5,7 @@
 const uCaseLett = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lCaseLett = "abcdefghijklmnopqrstuvwxyz";
 const numbs = "0123456789";
-const symbs = "~!@#$%^&*()[]{}-+=|\<>?/";
+const symbs = "#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -45,7 +45,7 @@ while(charTypeList.length == 0 ){
     }
   }
   if(charTypeList.length == 0){
-    alert("You have not chosen any character types\nPlease begin selection process again.")
+    alert("You have not chosen any character types\nPlease begin selection process again.");
   }
 } //end while list
   return charTypeList
