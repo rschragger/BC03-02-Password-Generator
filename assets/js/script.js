@@ -14,6 +14,26 @@ var copyCodeBtn = document.querySelector("#copyCode");
 
 
 //Create Functions ---------------------------------------------------------
+//Prompt for password length ***********************
+promptPasswordLength = function () {
+
+  var isCorrect = false;
+  while (isCorrect != true) {
+    var passwordLengthAsk = window.prompt("How many characters do you want in your password?", "Enter a number between 8 and 128");
+    //End for "Cancel"
+    if (passwordLengthAsk === null) {
+      return;
+  }
+    if (passwordLengthAsk < 8 || passwordLengthAsk > 128 || isNaN(passwordLengthAsk)) {
+      isCorrect = false;
+      alert("Please check your answer");
+    } else {
+      isCorrect = true;
+    }
+  }
+  return passwordLengthAsk;
+} //end promptPasswordLength()
+
 
 //Prompt for Character Types to use ***********************
 var promptTypeList = function () {
@@ -21,7 +41,7 @@ var promptTypeList = function () {
   //Make an array with possible values [ uCaseLett lCaseLett numbs symbs ] 
   var charTypeList = [];
   var charChoiceList = ["uCaseLett", "lCaseLett", "numbs", "symbs"];
-  var messageList = ["Uppercase (A...Z)", "Lowercase (a...z)", "Numbers (0...9)", "Symbols (!@#$...)"];
+  var messageList = ["Uppercase [A...Z]", "Lowercase [a...z]", "Numbers [0...9]", "Symbols [!@#$...]"];
   var isCorrect = false;
   
 
@@ -31,7 +51,7 @@ while(charTypeList.length == 0 ){
   for (var charChoice = 0; charChoice < charChoiceList.length; charChoice++) {
     isCorrect = false
     while (isCorrect != true) {
-      var choice = window.prompt("Do you want " + messageList[charChoice] + "in your password?", "Y/N");
+      var choice = window.prompt("Do you want " + messageList[charChoice] + " in your password?", "Y/N");
       //End for "Cancel"
     if (choice === null) {
       return;
@@ -57,25 +77,7 @@ while(charTypeList.length == 0 ){
   return charTypeList
 } //end promptTypeList() ***********************
 
-//Prompt for password length ***********************
-promptPasswordLength = function () {
 
-  var isCorrect = false;
-  while (isCorrect != true) {
-    var passwordLengthAsk = window.prompt("How many characters do you want in your password?", "Enter a number between 8 and 128");
-    //End for "Cancel"
-    if (passwordLengthAsk === null) {
-      return;
-  }
-    if (passwordLengthAsk < 8 || passwordLengthAsk > 128 || isNaN(passwordLengthAsk)) {
-      isCorrect = false;
-      alert("Please check your answer");
-    } else {
-      isCorrect = true;
-    }
-  }
-  return passwordLengthAsk;
-} //end promptPasswordLength()
 
 
 //Create a list of what character types for each position ***********************

@@ -24,11 +24,14 @@ Access to website at https://rschragger.github.io/BC03-02-Password-Generator/ is
 
 ## Usage
 
+### Initial view
+![Screenshot - Initial View](./assets/images/ScreenShot1.png)
 Simply press the Generate Password button and follow the prompts
 
-![Screenshot](./assets/images/ScreenShot.png)
-
+### After password generation
+![Screenshot - Password Generated](./assets/images/ScreenShot2.png)
 The password will appear in the central box
+A "Copy Code" button will appear. Press this button to copy the password to your clipboard.
 
 ## Credits
 
@@ -41,4 +44,5 @@ Password special characters have been obtained from (https://owasp.org/www-commu
 © Copyright Reeve Schragger 2022
 
 ## Features
-
+- This returns the password into the interface
+- There is a "Copy Code" button to ensure that the seletion of password characters is complete and fast
