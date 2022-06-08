@@ -103,7 +103,7 @@ header h1 {
 } */
 
 .btn {
-  border: none;
+  /* border: none; */
   /* background-color: hsl(360, 91%, 36%); */
   background-image: linear-gradient(var(--darker) 0%,
       var(--dark) 40%,
@@ -129,6 +129,9 @@ header h1 {
   var(--dark) 55%,
   var(--darker) 90%);
 }
+
+.btn:active {
+  background-image: linear-gradient(135deg, var(--dark) 0%, var(--darker) 25%);}
 
 button[disabled] {
   cursor: default;

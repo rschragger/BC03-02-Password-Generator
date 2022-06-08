@@ -32,6 +32,10 @@ while(charTypeList.length == 0 ){
     isCorrect = false
     while (isCorrect != true) {
       var choice = window.prompt("Do you want " + messageList[charChoice] + "in your password?", "Y/N");
+      //End for "Cancel"
+    if (choice === null) {
+      return;
+  }
       choice = choice.toUpperCase();
       console.log(choice + "   " + charChoice);
       if (choice == "Y" || choice == "N") {
@@ -59,6 +63,10 @@ promptPasswordLength = function () {
   var isCorrect = false;
   while (isCorrect != true) {
     var passwordLengthAsk = window.prompt("How many characters do you want in your password?", "Enter a number between 8 and 128");
+    //End for "Cancel"
+    if (passwordLengthAsk === null) {
+      return;
+  }
     if (passwordLengthAsk < 8 || passwordLengthAsk > 128 || isNaN(passwordLengthAsk)) {
       isCorrect = false;
       alert("Please check your answer");
@@ -123,7 +131,11 @@ function randString(charArray) {
 //*** generatePassword() - This is the main function ************************
 function generatePassword() {
   var PasswordLength = promptPasswordLength();
+  if(PasswordLength === undefined){return}
+
   var charTypeChoice = promptTypeList();
+  if(charTypeChoice === undefined){return}
+  
   var charTypeArray = createCharTypeList(PasswordLength, charTypeChoice);
   var charArray = createCharArray(charTypeArray);
   var FinalPassword = randString(charArray);
@@ -139,6 +151,8 @@ function writePassword() {
 
   //create password by calling main function
   var password = generatePassword();
+  if(password === undefined){return}
+  
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 
