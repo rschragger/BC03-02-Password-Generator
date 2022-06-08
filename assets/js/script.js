@@ -89,20 +89,40 @@ function generateRandChar(charcTypeChoice) {
   return NewChar;
 }
 
-//function to randomise the position of digits ***********************
+//function to generate the required amount of characters ***********************
+//Make as an array so it can be further randomised
+function createCharArray(charTypeArray) {
+  var charArray = [];
+  for (var i = 0; i < charTypeArray.length; i++) {
+    charArray.push(generateRandChar(eval(charTypeArray[i])))
+    }
+    return charArray;
+  }
 
-//*** generatePassword() - This is the main function ************************/
+var test=createCharArray(['uCaseLett', 'lCaseLett', 'numbs', 'symbs', 'lCaseLett', 'symbs','uCaseLett', 'symbs'])
+
+//function to randomise the position of characters ***********************
+function randString(charArray){
+  randCharArray = [];
+  while(charArray.length>0){
+     x = Math.floor(Math.random() * charArray.length );
+    randCharArray.push(charArray[x]);
+  charArray.splice(x,1);
+}
+return randCharArray.join("");
+}
+
+//*** generatePassword() - This is the main function ************************
 function generatePassword() {
   var PasswordLength = promptPasswordLength();
   var charTypeChoice = promptTypeList();
-  var charTypeArray = createCharTypeList(PasswordLength, charTypeChoice)
+  var charTypeArray = createCharTypeList(PasswordLength, charTypeChoice) ;
+  var charArray = createCharArray(charTypeArray) ;
+var FinalPassword = randString(charArray) ;
+  // console.log(PasswordLength)
+  // console.log(charTypeArray);
 
-  console.log(PasswordLength)
-  console.log(charTypeArray);
-
-  y = "Y";
-  // return y;
-  return PasswordLength + " + " + charTypeArray;
+  return charArray + "\n +++++\n " + FinalPassword;
 }
 
 // Write password to the #password input
