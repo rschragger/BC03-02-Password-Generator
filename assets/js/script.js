@@ -10,6 +10,8 @@ const symbs = "#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var copyCodeBtn = document.querySelector("#copyCode");
+
 
 //Create Functions ---------------------------------------------------------
 
@@ -126,6 +128,9 @@ function generatePassword() {
   var charArray = createCharArray(charTypeArray);
   var FinalPassword = randString(charArray);
 
+  //Display the copyCode button
+  copyCode.style.display = "block" ;
+
   return FinalPassword;
 } //end generatePassword() 
 
@@ -139,6 +144,20 @@ function writePassword() {
 
 } //end writePassword() 
 
+
+//Copy generated code to clipboard ***********************
+function copyTheCode(){
+  var passwordText = document.querySelector("#password");
+
+console.log("Check password var:" & passwordText.value );
+navigator.clipboard.writeText(passwordText.value);
+}
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 document.getElementById("generate").addEventListener("click", writePassword);
+
+//Add event listener to copyCode button
+copyCodeBtn.addEventListener("click", copyTheCode);
+document.getElementById("copyCode").addEventListener("click", copyTheCode);

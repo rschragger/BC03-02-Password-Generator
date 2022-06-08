@@ -81,6 +81,7 @@ header h1 {
 
 .card-body {
   min-height: 100px;
+  position: relative;
 }
 
 .card-footer {
@@ -122,6 +123,13 @@ header h1 {
   box-sizing: content-box;
 }
 
+.btn:hover {
+  background-image: linear-gradient(var(--darker) 10%,
+  var(--dark) 35%,
+  var(--dark) 55%,
+  var(--darker) 90%);
+}
+
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
@@ -158,6 +166,17 @@ button[disabled] {
 #password:hover {
   box-shadow: inset 8px 8px 12px 2px var(--dark);
 
+}
+
+#copyCode {
+  display: none;
+position: absolute;
+right:-20px;
+top:-30px;
+padding:3px 8px;
+font-size: 14px;
+color: var(--highlight) ;
+background-color: var(--darker);
 }
 
 @media (max-width: 690px) {
