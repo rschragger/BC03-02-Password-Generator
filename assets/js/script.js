@@ -6,13 +6,14 @@ const uCaseLett = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lCaseLett = "abcdefghijklmnopqrstuvwxyz";
 const numbs = "0123456789";
 const symbs = "~!@#$%^&*()[]{}-+=|\<>?/";
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 
 //Create Functions ---------------------------------------------------------
 
-//Get Character Types to use ***********************
+//Prompt for Character Types to use ***********************
 var promptTypeList = function () {
   //prompt for character types
   //Make an array with possible values [ uCaseLett lCaseLett numbs symbs ] 
@@ -20,8 +21,11 @@ var promptTypeList = function () {
   var charChoiceList = ["uCaseLett", "lCaseLett", "numbs", "symbs"];
   var messageList = ["Uppercase (A...Z)", "Lowercase (a...z)", "Numbers (0...9)", "Symbols (!@#$...)"];
   var isCorrect = false;
+  
 
-  //Cycle through the prompts to choose character types
+//This is a check to see that at least one character type is chosen
+while(charTypeList.length == 0 ){
+  //Cycle through the prompts to choose character types 
   for (var charChoice = 0; charChoice < charChoiceList.length; charChoice++) {
     isCorrect = false
     while (isCorrect != true) {
@@ -32,7 +36,7 @@ var promptTypeList = function () {
         isCorrect = true;
         if (choice == "Y") {
           charTypeList.push(charChoiceList[charChoice]);
-          console.log(charTypeList);
+          // console.log(charTypeList);
         }
       } else {
         isCorrect = false;
@@ -40,8 +44,12 @@ var promptTypeList = function () {
       }
     }
   }
+  if(charTypeList.length == 0){
+    alert("You have not chosen any character types\nPlease begin selection process again.")
+  }
+} //end while list
   return charTypeList
-} //end promptTypeList()
+} //end promptTypeList() ***********************
 
 //Prompt for password length ***********************
 promptPasswordLength = function () {
@@ -60,22 +68,20 @@ promptPasswordLength = function () {
 } //end promptPasswordLength()
 
 
-//function to create a list of what character types for each position ***********************
+//Create a list of what character types for each position ***********************
 //we will do this structurally by putting in one of each type at the beginning and then randomising
 //we will then randomise the position of the digits later
-createCharTypeList = function(pwLength, pwChoiceArray) {
+createCharTypeList = function (pwLength, pwChoiceArray) {
   var pwTypeArray = [];
   for (var len = 0; len < pwLength; len++) {
     if (len < pwChoiceArray.length) {
       pwTypeArray.push(pwChoiceArray[len]);
     } else {
       pwTypeArray.push(pwChoiceArray[Math.floor(Math.random() * pwChoiceArray.length)]);
-      }
-     }
-     return pwTypeArray;
+    }
   }
-
-
+  return pwTypeArray;
+} // end createCharTypeList()
 
 
 //Generate a random character ***********************
@@ -84,10 +90,10 @@ function generateRandChar(charcTypeChoice) {
   var numInList = charcTypeChoice.length;
   randNo = Math.floor(Math.random() * numInList);
   NewChar = charcTypeChoice.substring(randNo, randNo + 1);
-  console.log(randNo);
-  console.log(NewChar);
+  // console.log(randNo);
+  // console.log(NewChar);
   return NewChar;
-}
+} // end generateRandChar()
 
 //function to generate the required amount of characters ***********************
 //Make as an array so it can be further randomised
@@ -95,46 +101,43 @@ function createCharArray(charTypeArray) {
   var charArray = [];
   for (var i = 0; i < charTypeArray.length; i++) {
     charArray.push(generateRandChar(eval(charTypeArray[i])))
-    }
-    return charArray;
   }
+  return charArray;
+} //end createCharArray()
 
-var test=createCharArray(['uCaseLett', 'lCaseLett', 'numbs', 'symbs', 'lCaseLett', 'symbs','uCaseLett', 'symbs'])
+var test = createCharArray(['uCaseLett', 'lCaseLett', 'numbs', 'symbs', 'lCaseLett', 'symbs', 'uCaseLett', 'symbs'])
 
 //function to randomise the position of characters ***********************
-function randString(charArray){
+function randString(charArray) {
   randCharArray = [];
-  while(charArray.length>0){
-     x = Math.floor(Math.random() * charArray.length );
+  while (charArray.length > 0) {
+    x = Math.floor(Math.random() * charArray.length);
     randCharArray.push(charArray[x]);
-  charArray.splice(x,1);
-}
-return randCharArray.join("");
-}
+    charArray.splice(x, 1);
+  }
+  return randCharArray.join("");
+} // end randString()
 
 //*** generatePassword() - This is the main function ************************
 function generatePassword() {
   var PasswordLength = promptPasswordLength();
   var charTypeChoice = promptTypeList();
-  var charTypeArray = createCharTypeList(PasswordLength, charTypeChoice) ;
-  var charArray = createCharArray(charTypeArray) ;
-var FinalPassword = randString(charArray) ;
-  // console.log(PasswordLength)
-  // console.log(charTypeArray);
+  var charTypeArray = createCharTypeList(PasswordLength, charTypeChoice);
+  var charArray = createCharArray(charTypeArray);
+  var FinalPassword = randString(charArray);
 
-  return charArray + "\n +++++\n " + FinalPassword;
-}
+  return FinalPassword;
+} //end generatePassword() 
 
-// Write password to the #password input
+// Write password to the #password input ***********************
 function writePassword() {
 
   //create password by calling main function
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 
-} //end writePassword() ***********************
+} //end writePassword() 
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
